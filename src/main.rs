@@ -40,7 +40,7 @@ fn main() {
 
 
 
-    let output_file = "out.bmp";
+    let output_file = "out.png";
     framebuffer
         .render_to_file(output_file)
         .expect("Failed to save framebuffer to file");
