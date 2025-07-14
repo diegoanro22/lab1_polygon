@@ -115,7 +115,7 @@ fn main() {
         line(&mut framebuffer, start, end);
     }
 
-    let output_file = "out.png";
+    let output_file = "out.bmp";
     framebuffer
         .render_to_file(output_file)
         .expect("Failed to save framebuffer to file");

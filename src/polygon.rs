@@ -21,7 +21,6 @@ pub fn fill_polygon(framebuffer: &mut FrameBuffer, verts: &[Vector2]) {
             // ignorar horizontales
             if y1 == y2 { continue; }
 
-            // ¿this scanline intersecta el segmento?
             if (y >= y1.min(y2)) && (y < y1.max(y2)) {
                 let t = (y as f32 - a.y) / (b.y - a.y);
                 let x = a.x + t * (b.x - a.x);
