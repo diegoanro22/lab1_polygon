@@ -13,7 +13,6 @@ fn main() {
     let background_color = Color::BLACK;
     let mut framebuffer = FrameBuffer::new(width, height, background_color);
 
-    
     let polygon1 = vec![
         Vector2::new(165.0, 380.0),
         Vector2::new(185.0, 360.0),
@@ -37,8 +36,22 @@ fn main() {
         line(&mut framebuffer, start, end);
     }
 
+    let polygon2 = vec![
+        Vector2::new(321.0, 335.0),
+        Vector2::new(288.0, 286.0),
+        Vector2::new(339.0, 251.0),
+        Vector2::new(374.0, 302.0),
+    ];
 
+    framebuffer.set_color(Color::BLUE);
+    fill_polygon(&mut framebuffer, &polygon2);
 
+    framebuffer.set_color(Color::WHITE);
+    for i in 0..polygon2.len() {
+        let start = polygon2[i];
+        let end = polygon2[(i + 1) % polygon2.len()];
+        line(&mut framebuffer, start, end);
+    }
 
     let output_file = "out.png";
     framebuffer
